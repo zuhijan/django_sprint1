@@ -6,21 +6,10 @@
 {% block content %}
 <h1>Лента записей</h1>
   <!-- Перебираем в цикле все посты -->
-  {% for post in posts %}
+  {% for post in posts %} 1
     <hr>
     <article>
-      <ul>
-        <li>
-          Место: {{ post.location }}
-        </li>
-        <li>
-          Дата: {{ post.date }}
-        </li>
-        <li>
-          Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
-        </li>
-      </ul>
-      <!-- Первые 10 слов -->
+      {% include "includes/unordered-list.html" %}
       <p>
         {{ post.text|truncatewords:10 }}
       </p>
